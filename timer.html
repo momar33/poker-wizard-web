@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Poker Wizard</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/timer-style.css">
+    <script src="resources/js/current-game-data.js" defer></script>
+    <script src="resources/js/player-data.js" defer></script>
+    <script src="resources/js/timer-settings.js" defer></script>
+    <script src="resources/js/timer-display.js" defer></script>
+    <script src="resources/js/timer-events.js" defer></script>
+    <script src="resources/js/timer-main.js" defer></script>
+    <audio id="buzzer" src="resources/sounds/BUZZER.WAV"></audio>
+</head>
+<body >
+
+    <div style="height: 100%;">
+
+    <table class="main-table" id="mainScreen" style="display: table;">
+        <tr class="top-row">
+            <td class="column1">
+                <table class="info-table border">
+                    <tr>
+                        <td class="info-row"><strong>Players Left<br />
+                            <span class="white-text" id="playersLeft"></span></strong></td>
+                    </tr>
+                    <tr>
+                        <td class="info-row"><strong>Average Stack<br />
+                            <span class="white-text" id="averageStack"></span></strong></td>
+                    </tr>
+                    <tr>
+                        <td class="info-row"><strong>Total Chips<br />
+                            <span class="white-text" id="totalChips"></span></strong></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="column2">
+                <button class="button-style1" id="startButton" type="button">Start</button>
+                <br />
+                <br />
+                <button class="button-style1" id="playersScreenButton" type="button">Players Screen</button>
+            </td>
+            <td class="column3">
+                <table class="places-table border">
+                    <tr>
+                        <td>1st</td>
+                        <td class="white-text" id="payout1st"></td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td class="white-text" id="payout2nd"></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td class="white-text" id="payout3rd"></td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td class="white-text" id="payout4th"></td>
+                    </tr>
+                    <tr>
+                        <td class="pot-text">Pot</td>
+                        <td class="pot-text white-text" id="pot"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="time-row">
+            <td colspan="3">
+                <table class="time-table__normal border white-text">
+                    <tr>
+                        <td id="time"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="blinds-row">
+            <td></td>
+            <td>
+                <table class="blinds-table border">
+                    <tr>
+                        <td class="blinds-label" id="currentRound">Round 1</td>
+                    </tr>
+                    <tr>
+                        <td class="blinds-text white-text" id="currentBlinds">15 / 30</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table class="blinds-table">
+                    <tr>
+                        <td class="blinds-label">Next Round</td>
+                    </tr>
+                    <tr>
+                        <td class="blinds-text white-text" id="nextBlinds">25 / 50</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table class="main-table" id="playerScreen" style="display: none;">
+        <tr class="playerscreen-row1">
+            <td class="col1">
+                <button class="button-style2" id="homeScreenButton" type="button">Home Screen</button>
+            </td>
+            <td class="col2">
+                <button class="button-style2" id="addPlayerButton" type="button">Add Player</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="valign-top" colspan="2">
+                <table class="table-players border" id="players">
+                    <tr>
+                        <th>Place</th>
+                        <th>Player</th>
+                        <th>Rebuys</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    </div>
+</body>
+</html>
