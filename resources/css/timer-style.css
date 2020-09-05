@@ -1,11 +1,111 @@
-.main-table {
+:root {
+    --variable-text-color: white;
+    --accent-border: medium solid white;
+    --accent-border-radius: 25px;
+    --standard-font-size: 4.5vh;
+    --larger-font-size: 5.5vh;
+}
+body > div {
+    height: 100%;
+}
+#homeScreen, #playersScreen {
     width: 100%;
     height: 100%;
     background-color: #009933;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: center;
+    display: table;
 }
+#homeScreen > :nth-child(1) {
+    height: 35%;
+}
+#homeScreen > :nth-child(2) {
+    height: 35%;
+}
+#homeScreen > :nth-child(1) > :nth-child(1){
+    width: 30%;
+}
+#homeScreen #hsRow1 table{
+    width: 75%;
+    height: 95%;
+    margin-top: 0px;
+    margin: auto;
+    font-size: var(--standard-font-size);
+    border: var(--accent-border);
+    border-radius: var(--accent-border-radius);
+}
+#homeScreen #hsRow1 input{
+    height: 20%;
+    width: 70%;
+    font-size: var(--larger-font-size);
+    font-weight: bold;
+}
+#chipInfoTable > :nth-child(even) td {
+    color: var(--variable-text-color);
+    padding: 0px;
+}
+
+#homeScreen > :nth-child(1) > :nth-child(2){
+    width: 40%;
+}
+#placeInfoTable > tr > :nth-child(2) {
+    color: var(--variable-text-color);
+}#placeInfoTable > :nth-child(5) {
+    font-size: var(--larger-font-size);
+}
+#homeScreen > :nth-child(2) table{
+    margin: auto;
+    width: 50%;
+    height: 80%;
+    font-size: 25vh;
+    color: var(--variable-text-color);
+    border: var(--accent-border);
+    border-radius: var(--accent-border-radius);
+}
+#homeScreen > :nth-child(3) table{
+    margin: auto;
+    width: 100%;
+    height: 90%;
+
+}
+#homeScreen > :nth-child(3) > :nth-child(2) table {
+    border: var(--accent-border);
+    border-radius: var(--accent-border-radius);
+}
+#homeScreen > :nth-child(3) table > :nth-child(1) {
+    height: 30%;
+    font-size: var(--standard-font-size);
+}
+#homeScreen > :nth-child(3) table > :nth-child(2) {
+    height: 70%;
+    font-size: 11vh;
+    color: var(--variable-text-color);
+}
+#playersScreen > :nth-child(1) {
+    height: 10%;
+    width: 100%;
+}
+#playersScreen > :nth-child(1) input {
+    height: 75%;
+    width: 40%;
+    font-size: var(--standard-font-size);
+    font-weight: bold;
+}
+#playersScreen > :nth-child(2) {
+    vertical-align: top;
+}
+#playersScreen > :nth-child(2) table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: var(--standard-font-size);
+    font-weight: bold;
+}
+/* table, td {
+    border: 1px solid black;
+} */
+
+
 .top-row {
     height: 30%;
 }
@@ -110,7 +210,7 @@
     height: 5vh;
     border: medium solid white;
 }
-.form-popup {
+.popup {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -121,18 +221,25 @@
     height: auto;
     padding: 20px;
     margin-left: -9%;
-    margin-top: -6;
+    margin-top: -6%;
     background-color: white;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-.form-popup button {
+.popup input[type=button] {
     margin: 15px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.popup p {
+    margin: 0px;
+    color: red;
 }
 html, body {
     height: 100%;
     margin: 0px;
 }
+
 @media (min-aspect-ratio: 3/1) {
   .button-style3 {
     font-size: 5vw;

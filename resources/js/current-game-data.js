@@ -1,9 +1,12 @@
-const NOT_STARTED = 0;
-const RUNNING =     1;
-const PAUSED =      2;
-const END_OF_ROUND =3;
+import PlayerData from "/resources/js/player-data.js";
+import {settings} from "/resources/js/timer-settings.js";
 
-class CurrentGameData {
+export default class CurrentGameData {
+    NOT_STARTED = 0;
+    RUNNING =     1;
+    PAUSED =      2;
+    END_OF_ROUND =3;
+
     PDC_BLINDS = [  "15 / 30",
                     "25 / 50",
                     "50 / 100",
@@ -19,13 +22,13 @@ class CurrentGameData {
     constructor() {
         this._startingPlayers = 0;
         this._playersLeft = 0;
-        this._totalChips;
-        this._averageStack;
-        this._seconds;
-        this._pot;
+        this._totalChips = 0;
+        this._averageStack = 0;
+        this._seconds = 0;
+        this._pot = 0;
         this._round = 1;
         this._blinds = this.PDC_BLINDS;
-        this._state = NOT_STARTED;
+        this._state = this.NOT_STARTED;
         this._payouts = [ 0.0, 0.0, 0.0, 0.0 ];
         this._players = [];
     }
@@ -66,22 +69,20 @@ class CurrentGameData {
     }
 
     removePlayer(name) {
-        for (i = 0; i < this._players.length; i++) {
-            if (this._players[i].name == name) {
-                this._players.splice(i, 1);
+        for (var player of this._players) {
+            if (player.name == name) {
+                this._players.splice(this._players.indexOf(player), 1);
             }
         }
     }
 
     getPlayerByName(name) {
-        var i;
-        for (i = 0; i < this._players.length; i++) {
-            if (this._players[i].name == name) {
-                return this._players[i];
+        for (var player of this._players) {
+            if (player.name == name) {
+                return player;
             }
         }
     }
-
 
     getBlinds() {
         var extraRounds = this._round - this._blinds.length;
@@ -163,7 +164,7 @@ class CurrentGameData {
             rebuyCount += this._players[i].rebuys;
         }
 
-        if (this._state == NOT_STARTED) {
+        if (this._state == this.NOT_STARTED) {
             //this._startingPlayers = this._playersLeft;
             // TODO: Add if to check if timeIsPerPlayer
             this._playersLeft = this._startingPlayers;

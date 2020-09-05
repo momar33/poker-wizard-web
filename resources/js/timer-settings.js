@@ -1,7 +1,8 @@
-var settings = {
+
+export var settings = {
     timeIsPerPlayer:    true,
     secondsPerRound:    1200,
-    secondsPerPlayer:   240,
+    secondsPerPlayer:   5, //240,
     maxSecondsPerRound: 2400,
     playersToPayout2nd: 4,
     playersToPayout3rd: 7,

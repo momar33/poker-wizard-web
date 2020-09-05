@@ -1,4 +1,4 @@
-class PlayerData {
+export default class PlayerData {
     constructor(playerName) {
         this._name = playerName;
         this._rebuys = 0;
