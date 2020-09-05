@@ -276,7 +276,7 @@ class Controller {
                    this.view.time.style.color != "red") {
             // change time to red
             this.view.time.style.color = "red";        
-        } else if (this.view.time.style.color != "white") {
+        } else if (gameData.seconds > settings.lowTime && this.view.time.style.color != "white") {
             this.view.time.style.color = "white";   
         }
     }
